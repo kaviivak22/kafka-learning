@@ -13,6 +13,7 @@ public class OrderProducer {
 
     /**
      * Constructor for OrderProducer.
+     *
      * @param kafkaTemplate
      */
     public OrderProducer(KafkaTemplate<String, Order> kafkaTemplate) {
@@ -25,6 +26,6 @@ public class OrderProducer {
      * @param order The order to be sent to Kafka.
      */
     public void sendOrder(Order order) {
-        kafkaTemplate.send(TOPIC,order.getOrderId() , order);
+        kafkaTemplate.send(TOPIC, order.getOrderId(), order);
     }
 }

@@ -13,9 +13,8 @@ public class OrderController {
         this.orderProducer = orderProducer;
     }
 
-    //@PostMapping
-    @PostMapping("/{orderId}")
-    public String createOrder(@PathVariable String orderId, @RequestBody Order order) {
+    @PostMapping
+    public String createOrder(@RequestBody Order order) {
 
         orderProducer.sendOrder(order);
 
